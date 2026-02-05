@@ -1,0 +1,42 @@
+:root {
+  --bg-bege: #EFEECF;
+  --header-bg: #EFEECF;
+  --accent-blue: #8ACBF5;
+  --text-dark: #1A1A1A;
+  --text-grey: #666666;
+  --font-main: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+  font-family: var(--font-main);
+  background-color: var(--bg-bege);
+  color: var(--text-dark);
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 50px;
+  background-color: var(--header-bg);
+  height: 80px; /* Altura fixa para cálculo da hero section */
+}
+
+.logo { font-size: 2rem; font-weight: 900; letter-spacing: 1px; }
+
+nav ul { display: flex; list-style: none; gap: 40px; }
+
+nav a {
+  text-decoration: none;
+  color: var(--text-dark);
+  text-align: center;
+  font-size: 0.85rem;
+  font-weight: 500;
+}
+
+.user-avatar img {
+  width: 45px; height: 45px; border-radius: 50%;
+  object-fit: cover; border: 2px solid #000;
+}
