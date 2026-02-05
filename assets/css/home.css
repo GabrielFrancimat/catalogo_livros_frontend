@@ -1,0 +1,161 @@
+/* --- Fundo e Layout Principal --- */
+.hero-section {
+  position: relative;
+  min-height: calc(100vh - 80px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 50px;
+  padding: 20px;
+  overflow: hidden;
+}
+
+.hero-section::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  /* Substitua pelo nome da sua imagem de fundo */
+  background-image: url("../img/bg-livro.png");
+  background-size: cover;
+  background-position: center;
+  z-index: -1;
+}
+
+/* --- Configuração dos Cards (Tamanhos Iguais) --- */
+.card-glass {
+  background: rgba(255, 255, 255, 0.9);
+  padding: 40px;
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(5px);
+
+  /* Tamanho Fixo e Flexbox para centralizar conteúdo */
+  width: 380px;
+  height: 480px; /* Altura idêntica para os dois */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+/* --- Card da Esquerda (Sobre Nós) --- */
+.info-card {
+  align-items: center; /* Texto alinhado à esquerda */
+}
+.info-card h2 {
+  margin-bottom: 20px;
+  font-size: 1.5rem;
+}
+.info-card p {
+  margin-bottom: 20px;
+  line-height: 1.5;
+  font-size: 0.9rem;
+}
+
+.btn-explore {
+  background: white;
+  border: 2px solid #000;
+  padding: 10px 20px;
+  border-radius: 20px;
+  font-weight: bold;
+  color: var(--accent-blue);
+  text-decoration: none;
+  display: inline-block;
+}
+
+/* --- Card da Direita (Auth Container) --- */
+.auth-container {
+  position: relative;
+  overflow: hidden; /* Esconde o formulário que desliza para fora */
+}
+
+/* Wrappers dos Formulários (Animação) */
+.form-wrapper {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  padding: 0 40px;
+  transition: all 0.5s ease-in-out;
+  opacity: 0;
+  pointer-events: none;
+  visibility: hidden;
+}
+
+/* Estado Visível */
+.form-wrapper.active {
+  opacity: 1;
+  pointer-events: all;
+  visibility: visible;
+  transform: translate(-50%, -50%);
+}
+
+/* Estados de Deslocamento (Slide) */
+.slide-out-left {
+  transform: translate(-150%, -50%) !important;
+  opacity: 0;
+}
+.slide-in-right {
+  transform: translate(150%, -50%) !important;
+  opacity: 0;
+}
+
+/* Estilos Internos do Form */
+.auth-container h2 {
+  text-align: center;
+  margin-bottom: 25px;
+  font-size: 1.8rem;
+}
+
+.input-group {
+  margin-bottom: 15px;
+}
+.input-group input {
+  width: 100%;
+  padding: 12px;
+  border-radius: 10px;
+  border: none;
+  background: #e0e0e0;
+  outline: none;
+}
+
+/* Link Esqueceu (Corrigido) */
+.forgot-pass {
+  display: block;
+  text-align: right;
+  margin-top: 8px;
+  font-size: 0.7rem;
+  font-weight: bold;
+  color: #666 !important; /* Força cinza */
+  text-decoration: none !important; /* Remove sublinhado */
+  text-transform: uppercase;
+}
+.forgot-pass:hover {
+  color: var(--accent-blue) !important;
+}
+
+/* Botão Entrar/Cadastrar */
+.btn-primary {
+  width: 100%;
+  background-color: var(--accent-blue);
+  border: 1px solid #000;
+  padding: 12px;
+  border-radius: 20px;
+  font-weight: bold;
+  cursor: pointer;
+  margin-top: 15px;
+  text-transform: uppercase;
+}
+
+/* Link de alternância (Toggle) */
+.toggle-link {
+  margin-top: 20px;
+  text-align: center;
+  font-size: 0.8rem;
+  color: #333;
+}
+.toggle-link a {
+  color: var(--accent-blue);
+  font-weight: bold;
+  text-decoration: none;
+}
