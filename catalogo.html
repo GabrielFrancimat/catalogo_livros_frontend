@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bookatalog - Catálogo</title>
+    <link rel="stylesheet" href="assets/css/global.css">
+    <link rel="stylesheet" href="assets/css/catalogo.css">
+</head>
+
+<body>
+
+    <header>
+        <div class="logo">Bookatalog</div>
+        <nav>
+            <ul>
+                <li><a href="index.html"><img src="assets/img/icons/home_icon.png" alt="Home"><br>Início</a></li>
+                <li><a href="catalogo.html"><img src="assets/img/icons/search_icon.png" alt="Buscar"><br>Busca</a></li>
+                <li><a href="perfil.html"><img src="assets/img/icons/perfil_icon.png" alt="Perfil"><br>Perfil</a></li>
+            </ul>
+        </nav>
+        <div class="user-avatar"><img src="assets/img/icons/perfil.svg" alt="User"></div>
+    </header>
+
+    <main class="catalog-container">
+        <div class="header-container">
+            <div class="catalog-title">Nosso Catálogo</div>
+        </div>
+
+        <div class="search-bar-container">
+            <input type="text" class="search-input" placeholder="Search">
+            <button class="icon-btn"><img src="assets/img/icons/home_icon.png" alt="Home"></button>
+            <button class="icon-btn"><img src="assets/img/icons/filter_icon.png" alt="Filtro"></button>
+        </div>
+
+        <div class="books-grid">
+
+            <div class="book-item" onclick="openModal(this)" data-title="Harry Potter e a Pedra Filosofal"
+                data-author="J. K. Rowling" data-image="assets/img/covers/harry.png"
+                data-desc="Harry Potter é um garoto órfão de 10 anos que vive infeliz com seus tios. Até que, repentinamente, ele recebe uma carta contendo um convite para ingressar em Hogwarts, uma famosa escola especializada em formar jovens bruxos.">
+                <img src="assets/img/covers/harry.png" class="book-cover" alt="Harry Potter">
+                <p class="book-title-card">Harry Potter e a Pedra Filosofal</p>
+            </div>
+
+            <div class="book-item" onclick="openModal(this)" data-title="O Cemitério" data-author="Stephen King"
+                data-image="assets/img/covers/cemiterio.png"
+                data-desc="Louis Creed, um jovem médico, muda-se com a família para o Maine. Perto dali, existe um cemitério onde crianças enterram seus animais. Mas além dele, há outro terreno, uma terra de um mal antigo capaz de trazer os mortos de volta.">
+                <img src="assets/img/covers/cemiterio.png" class="book-cover" alt="O Cemitério">
+                <p class="book-title-card">O Cemitério</p>
+            </div>
+
+            <div class="book-item" onclick="openModal(this)" data-title="Percy Jackson: O Ladrão de Raios"
+                data-author="Rick Riordan" data-image="assets/img/covers/percy.png"
+                data-desc="Os deuses do Olimpo continuam vivos em pleno século XXI! Percy Jackson descobre ser um semideus e precisa recuperar o raio mestre de Zeus para evitar uma guerra entre os deuses.">
+                <img src="assets/img/covers/percy.png" class="book-cover" alt="Percy Jackson">
+                <p class="book-title-card">Percy Jackson e os Olimpianos</p>
+            </div>
+
+            <div class="book-item" onclick="openModal(this)" data-title="Viagem ao Centro da Terra"
+                data-author="Júlio Verne" data-image="assets/img/covers/viagem.png"
+                data-desc="O professor Lidenbrock decifra um pergaminho antigo que indica o caminho para o centro da Terra. Junto com seu sobrinho Axel, eles embarcam na maior aventura de todos os tempos.">
+                <img src="assets/img/covers/viagem.png" class="book-cover" alt="Viagem ao Centro da Terra">
+                <p class="book-title-card">Viagem ao Centro da Terra</p>
+            </div>
+
+            <div class="book-item" onclick="openModal(this)" data-title="Diário de um Banana: Cabeça-Oca"
+                data-author="Jeff Kinney" data-image="assets/img/covers/banana.png"
+                data-desc="Greg Heffley está sob pressão. Sua mãe acha que videogame diminui a inteligência e quer que ele largue o controle e explore seu 'lado criativo'. E o Halloween está chegando...">
+                <img src="assets/img/covers/banana.png" class="book-cover" alt="Diário de um Banana">
+                <p class="book-title-card">Diário de um Banana</p>
+            </div>
+
+            <div class="book-item" onclick="openModal(this)" data-title="O Guia do Mochileiro das Galáxias"
+                data-author="Douglas Adams" data-image="assets/img/covers/guia.png"
+                data-desc="Arthur Dent tem sua casa demolida e descobre que a Terra será destruída para a construção de uma via expressa hiperespacial. Sua única chance de sobrevivência é pegar carona numa nave alienígena.">
+                <img src="assets/img/covers/guia.png" class="book-cover" alt="O Guia do Mochileiro">
+                <p class="book-title-card">O Guia do Mochileiro das Galáxias</p>
+            </div>
+
+            <div class="book-item" onclick="openModal(this)" data-title="O Gambito da Rainha" data-author="Walter Tevis"
+                data-image="assets/img/covers/gambito.png"
+                data-desc="Beth Harmon, uma órfã quieta e introversa, descobre um talento prodigioso para o xadrez. Enquanto sobe no ranking mundial, ela luta contra o vício e os demônios de seu passado.">
+                <img src="assets/img/covers/gambito.png" class="book-cover" alt="O Gambito da Rainha">
+                <p class="book-title-card">O Gambito da Rainha</p>
+            </div>
+
+            <div class="book-item" onclick="openModal(this)" data-title="O Visconde que me Amava"
+                data-author="Julia Quinn" data-image="assets/img/covers/bridgerton.png"
+                data-desc="Anthony Bridgerton escolheu sua esposa, mas a irmã dela, Kate Sheffield, é a maior oponente dessa união. O que ele não esperava é que essa rivalidade se transformasse em algo mais.">
+                <img src="assets/img/covers/bridgerton.png" class="book-cover" alt="Bridgerton">
+                <p class="book-title-card">O Visconde que me Amava</p>
+            </div>
+
+            <div class="book-item" onclick="openModal(this)" data-title="Tremembé" data-author="Ullisses Campbell"
+                data-image="assets/img/covers/tremembe.png"
+                data-desc="Histórias reais e chocantes sobre o presídio que abriga alguns dos criminosos mais famosos do Brasil, revelando detalhes inéditos sobre a vida atrás das grades.">
+                <img src="assets/img/covers/tremembe.png" class="book-cover" alt="Tremembé">
+                <p class="book-title-card">Tremembé</p>
+            </div>
+
+            <div class="book-item" onclick="openModal(this)" data-title="A Odisseia" data-author="Homero"
+                data-image="assets/img/covers/odisseia.png"
+                data-desc="O poema épico que narra o retorno de Odisseu (Ulisses) para casa após a Guerra de Troia. Uma jornada de 10 anos enfrentando monstros, deuses e desafios mortais.">
+                <img src="assets/img/covers/odisseia.png" class="book-cover" alt="A Odisseia">
+                <p class="book-title-card">A Odisseia</p>
+            </div>
+
+        </div>>
+    </main>
+
+    <div id="bookModal" class="modal-overlay" onclick="closeModal(event)">
+        <div class="modal-content">
+            <button class="close-btn" onclick="closeModalBtn()">×</button>
+
+            <div class="modal-body">
+                <div class="modal-img-wrapper">
+                    <img id="modalImage" src="" alt="Capa do Livro">
+                </div>
+
+                <div class="modal-info">
+                    <h2 id="modalTitle">Título do Livro</h2>
+                    <p class="modal-author">Autor - <span id="modalAuthor">Nome do Autor</span></p>
+                    <p id="modalDesc" class="modal-desc">
+                        Descrição do livro vai aparecer aqui...
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="assets/js/pages/catalogo.js"></script>
+</body>
+
+</html>
