@@ -1,4 +1,3 @@
-/* --- Fundo e Layout Principal --- */
 .hero-section {
   position: relative;
   min-height: calc(100vh - 80px);
@@ -14,32 +13,29 @@
   content: "";
   position: absolute;
   inset: 0;
-  /* Substitua pelo nome da sua imagem de fundo */
-  background-image: url("../img/bg-livro.png");
+  background-image: url("../img//backgrounds/bg-livro.png");
   background-size: cover;
   background-position: center;
   z-index: -1;
 }
 
-/* --- Configuração dos Cards (Tamanhos Iguais) --- */
+
 .card-glass {
   background: rgba(255, 255, 255, 0.9);
   padding: 40px;
   border-radius: 20px;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
   backdrop-filter: blur(5px);
-
-  /* Tamanho Fixo e Flexbox para centralizar conteúdo */
   width: 380px;
-  height: 480px; /* Altura idêntica para os dois */
+  height: 480px; 
   display: flex;
   flex-direction: column;
   justify-content: center;
 }
 
-/* --- Card da Esquerda (Sobre Nós) --- */
+
 .info-card {
-  align-items: center; /* Texto alinhado à esquerda */
+  align-items: center; 
 }
 .info-card h2 {
   margin-bottom: 20px;
@@ -62,13 +58,12 @@
   display: inline-block;
 }
 
-/* --- Card da Direita (Auth Container) --- */
 .auth-container {
   position: relative;
-  overflow: hidden; /* Esconde o formulário que desliza para fora */
+  overflow: hidden; 
 }
 
-/* Wrappers dos Formulários (Animação) */
+
 .form-wrapper {
   position: absolute;
   top: 50%;
@@ -82,7 +77,7 @@
   visibility: hidden;
 }
 
-/* Estado Visível */
+
 .form-wrapper.active {
   opacity: 1;
   pointer-events: all;
@@ -90,7 +85,7 @@
   transform: translate(-50%, -50%);
 }
 
-/* Estados de Deslocamento (Slide) */
+
 .slide-out-left {
   transform: translate(-150%, -50%) !important;
   opacity: 0;
@@ -100,7 +95,7 @@
   opacity: 0;
 }
 
-/* Estilos Internos do Form */
+
 .auth-container h2 {
   text-align: center;
   margin-bottom: 25px;
@@ -119,22 +114,21 @@
   outline: none;
 }
 
-/* Link Esqueceu (Corrigido) */
+
 .forgot-pass {
   display: block;
   text-align: right;
   margin-top: 8px;
   font-size: 0.7rem;
   font-weight: bold;
-  color: #666 !important; /* Força cinza */
-  text-decoration: none !important; /* Remove sublinhado */
+  color: #666 !important; 
+  text-decoration: none !important; 
   text-transform: uppercase;
 }
 .forgot-pass:hover {
   color: var(--accent-blue) !important;
 }
 
-/* Botão Entrar/Cadastrar */
 .btn-primary {
   width: 100%;
   background-color: var(--accent-blue);
@@ -146,8 +140,6 @@
   margin-top: 15px;
   text-transform: uppercase;
 }
-
-/* Link de alternância (Toggle) */
 .toggle-link {
   margin-top: 20px;
   text-align: center;
