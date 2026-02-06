@@ -1,23 +1,19 @@
-/* --- Container Principal --- */
 .profile-container {
   max-width: 1100px;
   margin: 50px auto;
   padding: 0 20px;
   display: grid;
-  grid-template-columns: 300px 1fr; /* Coluna fixa esquerda, resto flexível */
+  grid-template-columns: 300px 1fr;
   gap: 40px;
   align-items: start;
 }
-
-/* --- Estilo Base dos Cards (Cinza Escuro) --- */
 .profile-card {
-  background-color: #b3b3b3; /* Cor exata da referência */
+  background-color: #b3b3b3; 
   border-radius: 5px;
   padding: 30px;
   box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.15);
 }
 
-/* --- SIDEBAR (Esquerda) --- */
 .sidebar {
   text-align: center;
   border: 1px solid #999;
@@ -55,7 +51,7 @@
 }
 
 .btn-upload {
-  background-color: #8acbf5; /* Azul claro do tema */
+  background-color: #8acbf5; 
   color: white;
   font-weight: bold;
   border: 2px solid white;
@@ -72,7 +68,6 @@
   transform: translateY(-2px);
 }
 
-/* --- MAIN CONTENT (Direita) --- */
 .main-content {
   border: 1px solid #999;
   min-height: 500px;
@@ -92,10 +87,9 @@
   margin-bottom: 20px;
 }
 
-/* Grid do Formulário */
 .form-grid {
   display: grid;
-  grid-template-columns: 1fr 1fr; /* Duas colunas iguais */
+  grid-template-columns: 1fr 1fr; 
   column-gap: 30px;
   row-gap: 20px;
   margin-bottom: 40px;
@@ -111,16 +105,15 @@
 
 .form-group input {
   width: 100%;
-  background-color: #e6e6e6; /* Cinza claro dos inputs */
+  background-color: #e6e6e6; 
   border: none;
-  border-radius: 20px; /* Borda arredondada (pílula) */
+  border-radius: 20px; 
   padding: 12px 20px;
   font-size: 1rem;
   color: #333;
   outline: none;
 }
 
-/* --- Seção Social --- */
 .social-label {
   margin-top: 30px;
 }
@@ -135,7 +128,7 @@
   flex: 1;
 }
 
-/* Ícone posicionado dentro do input */
+
 .social-input-container i {
   position: absolute;
   left: 15px;
@@ -150,13 +143,13 @@
   background-color: #e6e6e6;
   border: none;
   border-radius: 25px;
-  padding: 12px 20px 12px 45px; /* Espaço extra na esquerda para o ícone */
+  padding: 12px 20px 12px 45px; 
   font-size: 1rem;
   color: #333;
   outline: none;
 }
 
-/* Cores dos ícones */
+
 .fa-instagram {
   background: radial-gradient(
     circle at 30% 107%,
@@ -175,13 +168,13 @@
   color: #000;
 }
 
-/* --- Responsividade --- */
+
 @media (max-width: 768px) {
   .profile-container {
-    grid-template-columns: 1fr; /* Empilha tudo em telas menores */
+    grid-template-columns: 1fr; 
   }
   .form-grid {
-    grid-template-columns: 1fr; /* Inputs um abaixo do outro */
+    grid-template-columns: 1fr; 
   }
   .social-row {
     flex-direction: column;
