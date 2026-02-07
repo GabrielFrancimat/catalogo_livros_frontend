@@ -30,3 +30,4 @@ function openLogin() {
   loginArea.style.pointerEvents = "all";
   loginArea.style.visibility = "visible";
 }
+

@@ -27,3 +27,22 @@ function closeModal(event) {
     modal.classList.remove("active");
   }
 }
+
+const searchInput = document.getElementById("searchInput");
+const filterBtn = document.getElementById("filterBtn");
+const books = document.querySelectorAll(".book-item");
+
+filterBtn.addEventListener("click", () => {
+  const searchValue = searchInput.value.toLowerCase().trim();
+
+  books.forEach(book => {
+    const title = book.getAttribute("data-title").toLowerCase();
+    const author = book.getAttribute("data-author").toLowerCase();
+
+    if (title.includes(searchValue) || author.includes(searchValue)) {
+      book.style.display = "block";
+    } else {
+      book.style.display = "none";
+    }
+  });
+});
