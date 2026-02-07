@@ -5,10 +5,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Bookatalog - Perfil</title>
-
     <link rel="stylesheet" href="assets/css/global.css">
     <link rel="stylesheet" href="assets/css/perfil.css">
-
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 
@@ -33,10 +31,11 @@
             <p class="user-handle">@francis</p>
 
             <div class="avatar-large">
-                <img src="assets/img/icons/perfil.svg" alt="Gabriel Avatar">
+                <img id="profileAvatar" src="assets/img/icons/perfil.svg" alt="Gabriel Avatar">
             </div>
 
-            <button class="btn-upload">Upload to Photo</button>
+            <button class="btn-upload" id="uploadBtn">Upload to Photo</button>
+            <input type="file" id="photoInput" accept="image/*" style="display: none;">
         </aside>
 
         <section class="profile-card main-content">
@@ -91,6 +90,8 @@
         </section>
 
     </main>
+
+    <script src="assets/js/pages/perfil.js"></script>
 
 </body>
 
