@@ -30,19 +30,94 @@ function closeModal(event) {
 
 const searchInput = document.getElementById("searchInput");
 const filterBtn = document.getElementById("filterBtn");
-const books = document.querySelectorAll(".book-item");
+const booksGrid = document.getElementById("booksGrid");
+
+document.addEventListener('keydown', (event) => {
+    if (event.key === "Enter") {
+        filterBtn.click();
+    }
+});
 
 filterBtn.addEventListener("click", () => {
-  const searchValue = searchInput.value.toLowerCase().trim();
+    const query = searchInput.value.trim();
 
-  books.forEach(book => {
-    const title = book.getAttribute("data-title").toLowerCase();
-    const author = book.getAttribute("data-author").toLowerCase();
-
-    if (title.includes(searchValue) || author.includes(searchValue)) {
-      book.style.display = "block";
-    } else {
-      book.style.display = "none";
+    if (!query) {
+        mostrarMensagemInicial();
+        return;
     }
-  });
+
+    buscarLivros(query);
 });
+
+async function buscarLivros(query) {
+    booksGrid.innerHTML = "<p>Buscando livros...</p>";
+
+    try {
+        const response = await fetch(
+            `https://openlibrary.org/search.json?q=${encodeURIComponent(query)}`
+        );
+        const data = await response.json();
+
+        booksGrid.innerHTML = "";
+
+        if (data.docs.length === 0) {
+            booksGrid.innerHTML = "<p>Nenhum livro encontrado.</p>";
+            return;
+        }
+
+        data.docs.slice(0, 12).forEach(book => {
+            criarCardLivro(book);
+        });
+
+    } catch (error) {
+        booksGrid.innerHTML = "<p>Erro ao buscar livros.</p>";
+        console.error(error);
+    }
+}
+
+function criarCardLivro(book) {
+    const div = document.createElement("div");
+    div.classList.add("book-item");
+
+    const title = book.title ?? "Título desconhecido";
+    const author = book.author_name
+        ? book.author_name.join(", ")
+        : "Autor desconhecido";
+
+    const coverId = book.cover_i;
+    const image = coverId
+        ? `https://covers.openlibrary.org/b/id/${coverId}-L.jpg`
+        : "assets/img/covers/placeholder.png";
+
+    const description =
+        book.first_sentence?.value ||
+        book.first_sentence ||
+        (book.subject ? `Temas: ${book.subject.slice(0, 5).join(", ")}` : null) ||
+        "Descrição não disponível para este livro.";
+
+    div.setAttribute("data-title", title);
+    div.setAttribute("data-author", author);
+    div.setAttribute("data-image", image);
+    div.setAttribute("data-desc", description);
+
+    div.onclick = () => openModal(div);
+
+    div.innerHTML = `
+        <img src="${image}" class="book-cover" alt="${title}">
+        <p class="book-title-card">${title}</p>
+    `;
+
+    booksGrid.appendChild(div);
+}
+
+mostrarMensagemInicial();
+
+function mostrarMensagemInicial() {
+    booksGrid.innerHTML = `
+        <p class="empty-message">
+            Digite o nome de um livro e clique no filtro para buscar 📚
+        </p>
+    `;
+}
+
+
